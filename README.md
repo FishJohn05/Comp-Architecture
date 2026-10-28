@@ -45,7 +45,21 @@ We are planning to finish by December 1, 2026. This is a tentative deadline and 
 
 ## Project Documents
 
-- [STATUS2.md](STATUS2.md): Current progress, remaining work, and next steps.
+- [STATUS.md](STATUS.md): Current progress, remaining work, and next steps.
 - [DESIGN.md](DESIGN.md): Proposed gameplay, controls, and board communication.
 
 This is the second project README. The original README.md is retained as the earlier project description.
+
+## Development Update 3 — October 19–November 1, 2026
+
+For the October 26–November 1 milestone, we wrote a **small Python logic prototype** in `pong.py`. It defines the ball's position and velocity, moves the ball one step, reverses its vertical direction at the top/bottom walls, and reverses its horizontal direction when it overlaps a paddle. An `update_game()` function calls those three steps in order.
+
+This version intentionally **does not** draw a game window, read keyboard or physical controls, keep score, reset after misses, or communicate between boards. The two paddle positions are fixed test values. The code runs on a computer using Python 3 without additional packages; it prints 30 ball positions to demonstrate updates. It is not yet integrated with the PINE Ox64 displays.
+
+### Project files
+
+- `pong.py` — basic movement and collision functions, plus a short console test.
+- `DESIGN.md` — gameplay design and explanation of the simplified code.
+- `STATUS.md` — completed code and unverified hardware tasks.
+
+The October 19–25 tasks (moving a rectangle on the board's screen and choosing/ordering controls) still require confirmation. The next stage is testing graphics and input on the hardware, then board-to-board communication.

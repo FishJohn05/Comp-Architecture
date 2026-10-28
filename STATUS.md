@@ -42,3 +42,34 @@ We plan to have one board run the main game and maintain the ball position and s
 ## Schedule
 
 We are using December 1, 2026 as a tentative completion date. The weekly timeline is in README2.md. We will revise it as we test the hardware and confirm the final due date.
+
+## Update 3: October 19–November 1, 2026
+
+### Code prepared
+
+- Created a simplified `pong.py` with `move_ball()`, `wall_collision()`, `paddle_collision()`, and `update_game()`.
+- Defined the playing field, ball velocity and size, and fixed test paddle positions.
+- Added a small console demonstration that prints ball coordinates for 30 updates.
+- Removed desktop graphics, keyboard controls, and game features outside this milestone's basic movement/collision scope.
+
+### Verification status
+
+| Item | Status |
+| --- | --- |
+| Basic movement and collision source code | Written; hardware gameplay not tested |
+| Python syntax | Checked |
+| Console position demonstration | Included; not a graphical game |
+| Moving rectangle on PINE Ox64 screen | Not confirmed |
+| Buttons or joystick selected/ordered | Not confirmed |
+| Physical paddle input | Not implemented |
+| Board-to-board communication | Not implemented |
+| Scoring and ball reset after misses | Not implemented |
+
+### Next steps
+
+1. Run `python3 pong.py` and verify the position output and collision behavior.
+2. Draw and animate a rectangle/ball on the PINE Ox64 display.
+3. Confirm the control hardware and read its inputs.
+4. Test communication between the boards and integrate the game logic.
+
+This update records completed **source-code preparation**, not a completed playable game or successful hardware testing.

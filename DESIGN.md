@@ -55,3 +55,20 @@ We are considering Wi-Fi or wired Ethernet. We still need to verify hardware sup
 - Display update rate and game speed.
 - Winning score and restart behavior.
 - How the game will pause or recover if the boards lose connection.
+
+## Development Update — October 19–November 1, 2026
+
+### Current Python implementation (`pong.py`)
+
+The first gameplay implementation is a **logic-only prototype**, not a playable Pong game. It uses a 640-by-400 coordinate system, a 10-by-10 ball, and two stationary 12-by-80 paddles. The ball starts at `(320, 200)` and moves by `(4, 3)` on each update.
+
+- `move_ball()` adds `ball_dx` and `ball_dy` to the ball coordinates.
+- `wall_collision()` checks the top and bottom boundaries, corrects the ball's position, and reverses vertical movement.
+- `paddle_collision()` checks whether the ball overlaps a paddle while moving toward it, then reverses horizontal movement.
+- `update_game()` runs movement, wall detection, and paddle detection once.
+
+The `__main__` section runs 30 updates and prints positions to the terminal. No drawing library is used. Paddle positions are placeholders; they do not respond to player input yet. The prototype does not implement scores, serves, or two-board communication. These remain part of the planned final design described above.
+
+### Integration still required
+
+Display the moving ball and paddles on the PINE Ox64 screen, connect physical controls, add scoring and reset behavior, and send player input/game state between the boards. Test actual ball movement and collisions on the target hardware before marking them complete.
